@@ -139,13 +139,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Graphics\paint.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="queue.c" />
     <ClCompile Include="Widget\button.c" />
     <ClCompile Include="Widget\widget.c" />
+    <ClCompile Include="Widget\widgetloop.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graphics\paint.h" />
     <ClInclude Include="Graphics\print.h" />
+    <ClInclude Include="queue.h" />
+    <ClInclude Include="Widget\widgetloop.h" />
     <ClInclude Include="Widget\button.h" />
     <ClInclude Include="Widget\widget.h" />
   </ItemGroup>

@@ -21,22 +21,8 @@ extern "C" {
 #endif // _cplusplus
 
 
-Paint* PaintInit()
-{
-	Paint* paint = (Paint*)malloc(sizeof(Paint));
-
-	paint->foreground_color = PrintForeGroundColorWhite;
-	paint->background_color = PrintBackGroundColorBlack;
-
-	return paint;
-}
-
-
-void DrawText(Paint* paint, const char* text, short x, short y)
-{
-	PrintMoveTo(x, y);
-	PrintHaveColor(text, paint->foreground_color, paint->background_color);
-}
+Paint* PaintInit();
+void PaintDrawText(Paint* paint, const char* text, short x, short y);
 
 
 #ifdef _cplusplus

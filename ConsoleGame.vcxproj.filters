@@ -22,6 +22,9 @@
     <Filter Include="源文件\Widget">
       <UniqueIdentifier>{6a418a80-06f1-49cc-92d8-e2ed10d1ee3e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\Graphics">
+      <UniqueIdentifier>{39feb6f3-cbd1-45a8-8def-b0e593f34f8e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -31,6 +34,15 @@
       <Filter>源文件\Widget</Filter>
     </ClCompile>
     <ClCompile Include="Widget\widget.c">
+      <Filter>源文件\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Graphics\paint.c">
+      <Filter>源文件\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="queue.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Widget\widgetloop.c">
       <Filter>源文件\Widget</Filter>
     </ClCompile>
   </ItemGroup>
@@ -45,6 +57,12 @@
       <Filter>头文件\Widget</Filter>
     </ClInclude>
     <ClInclude Include="Widget\button.h">
+      <Filter>头文件\Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="queue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Widget\widgetloop.h">
       <Filter>头文件\Widget</Filter>
     </ClInclude>
   </ItemGroup>
