@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="头文件\Graphics">
+      <UniqueIdentifier>{05cc200d-3005-4ce4-a96a-cd533a0cce36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\Widget">
+      <UniqueIdentifier>{e07f2ca1-35b9-42ab-b9af-3fb8efc64103}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Widget">
+      <UniqueIdentifier>{6a418a80-06f1-49cc-92d8-e2ed10d1ee3e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Widget\button.c">
+      <Filter>源文件\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Widget\widget.c">
+      <Filter>源文件\Widget</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Graphics\print.h">
+      <Filter>头文件\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics\paint.h">
+      <Filter>头文件\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Widget\widget.h">
+      <Filter>头文件\Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Widget\button.h">
+      <Filter>头文件\Widget</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
