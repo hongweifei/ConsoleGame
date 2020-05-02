@@ -1,5 +1,5 @@
 ﻿
-#include "widget.h"
+
 #include "widgetloop.h"
 
 #include "widget.h"
@@ -25,27 +25,61 @@ void AddWidgetToMainLoop(Widget* widget)
 void WidgetLoop()
 {
 	int i = 0;
+	int key = 0;
 
 	while (1)
 	{
+		if (KBHIT)
+		{
+			int key = GETCH;
+			if (key == KEY_UP)
+			{
+				for (i = 0; i < widget_count; i++)
+				{
+					if (widgets[i]->type == TYPE_BUTTON)
+					{
+						Button* button = (Button*)widgets[i];
+						if (!button->focus)
+						{
+							button->focus = 1;
+						}
+					}
+				}
+			}
+			else if (key == KEY_DOWN)
+			{
+				Button* button = (Button*)widgets[0];
+				for (i = 0; i < widget_count; i++)
+				{
+					
+					if (widgets[i]->type == TYPE_BUTTON)
+					{
+						Button* button = (Button*)widgets[i];
+						if (!button->focus)
+						{
+							button->focus = 1;
+						}
+					}
+				}
+			}
+		}
+
 		for (i = 0; i < widget_count; i++)
 		{
+			Paint *paint = PaintInit();
+			*paint = *widgets[i]->paint;
+
 			if (widgets[i]->type == TYPE_BUTTON)
 			{
 				Button* button = (Button*)widgets[i];
 				if (button->focus)
 				{
-					button->paint->foreground_color = PrintForeGroundColorBlack;
-					button->paint->background_color = PrintBackGroundColorWhite;
+					paint->foreground_color = PrintForeGroundColorBlack;
+					paint->background_color = PrintBackGroundColorWhite;
 				}
-				else
-				{
-					button->paint->foreground_color = PrintForeGroundColorBlack;
-					button->paint->background_color = PrintBackGroundColorWhite;
-				}	
 			}
-				
-			widgets[i]->render(widgets[i], widgets[i]->paint);
+			
+			widgets[i]->render(widgets[i], paint);
 		}
 
 	#ifdef _WIN32
