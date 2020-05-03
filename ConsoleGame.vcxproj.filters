@@ -45,6 +45,12 @@
     <ClCompile Include="Widget\widgetloop.c">
       <Filter>源文件\Widget</Filter>
     </ClCompile>
+    <ClCompile Include="Widget\label.c">
+      <Filter>源文件\Widget</Filter>
+    </ClCompile>
+    <ClCompile Include="Widget\textfield.c">
+      <Filter>源文件\Widget</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graphics\print.h">
@@ -63,6 +69,15 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Widget\widgetloop.h">
+      <Filter>头文件\Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="widget\keyboard.h">
+      <Filter>头文件\Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Widget\label.h">
+      <Filter>头文件\Widget</Filter>
+    </ClInclude>
+    <ClInclude Include="Widget\textfield.h">
       <Filter>头文件\Widget</Filter>
     </ClInclude>
   </ItemGroup>

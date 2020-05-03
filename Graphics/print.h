@@ -25,7 +25,7 @@
 //#define PRINT_BACKGROUND_INTENSITY	BACKGROUND_INTENSITY	// background color is intensified.
 */
 
-typedef enum _PrintForeGroundColor
+typedef enum _print_foreground_color
 {
 	PrintForeGroundColorBlack,
 	PrintForeGroundColorWhite = FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE,
@@ -35,7 +35,7 @@ typedef enum _PrintForeGroundColor
 }PrintForeGroundColor;
 
 
-typedef enum _PrintBackGroundColor
+typedef enum _print_background_color
 {
 	PrintBackGroundColorBlack,
 	PrintBackGroundColorWhite = BACKGROUND_RED | BACKGROUND_GREEN | BACKGROUND_BLUE,
@@ -71,7 +71,7 @@ static short cursor_y = 0;
 */
 
 
-typedef enum _PrintForeGroundColor
+typedef enum _print_foreground_color
 {
 	PrintForeGroundColorBlack = 30,
 	PrintForeGroundColorWhite = 37,
@@ -81,7 +81,7 @@ typedef enum _PrintForeGroundColor
 }PrintForeGroundColor;
 
 
-typedef enum _PrintBackGroundColor
+typedef enum _print_background_color
 {
 	PrintBackGroundColorBlack = 40,
 	PrintBackGroundColorWhite = 47,

@@ -24,7 +24,11 @@ Widget *WidgetInit(short x, short y)
 	widget->type = TYPE_WIDGET;
 	widget->x = x;
 	widget->y = y;
+	widget->focus_can = TRUE;
+	widget->focus = FALSE;
 	widget->paint = PaintInit();
+	widget->destroy = NULL;
+	widget->update = NULL;
 	widget->render = WidgetRender;
 
 	return widget;

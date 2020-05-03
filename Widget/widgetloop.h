@@ -4,13 +4,9 @@
 
 #include "widget.h"
 
-#define KEY_UP		72
-#define KEY_DOWN	80
-#define KEY_LEFT	75
-#define KEY_RIGHT	77
+#include <conio.h> 
 
 #ifdef _WIN32
-#include <conio.h> 
 #define KBHIT _kbhit()
 #define GETCH _getch()
 #endif // _WIN32
@@ -27,6 +23,7 @@ static short widget_count = 0;
 
 
 void AddWidgetToMainLoop(Widget* widget);
+void RemoveWidgetInMainLoop(unsigned short index);
 
 void WidgetMainLoop();
 

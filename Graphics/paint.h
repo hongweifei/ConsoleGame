@@ -10,7 +10,7 @@
 #define PAINT_HEAD
 
 
-typedef struct
+typedef struct _paint
 {
 	PrintForeGroundColor foreground_color;
 	PrintBackGroundColor background_color;
@@ -21,8 +21,8 @@ extern "C" {
 #endif // _cplusplus
 
 
-Paint* PaintInit();
-void PaintDrawText(Paint* paint, const char* text, short x, short y);
+Paint *PaintInit();
+void PaintDrawText(Paint *paint, const char *text, short x, short y);
 
 
 #ifdef _cplusplus

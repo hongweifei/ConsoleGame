@@ -1,5 +1,6 @@
 ﻿
 #include "widget.h"
+#include "label.h"
 #include "../Graphics/print.h"
 
 
@@ -10,23 +11,12 @@
 
 typedef struct
 {
-	//Widget *widget;
-	short id;
-	char *type;
-
-	short x;
-	short y;
-	Paint *paint;
-	WidgetFunction destroy;
-	WidgetFunction update;
-	RenderEvent render;
-
-	char *text;
-	short focus;//焦点
+	Label label;
+	WidgetFunction enter;
 }Button;
 
 
-void ButtonRender(Widget *widget, Paint *paint);
+//void ButtonRender(Widget *widget, Paint *paint);
 Button *ButtonInit(char* text, short x, short y);
 
 void ButtonSetFontColor(Button *button,PrintForeGroundColor color);
