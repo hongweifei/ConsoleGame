@@ -97,7 +97,7 @@ void TextFieldRender(Widget *widget, Paint *paint)
 					break;
 			}
 		}
-		PrintPosition(" ",x + 1, field->label.widget.y + field->height - 1);
+		PrintPosition(" ",x, field->label.widget.y + field->height - 1);
 	}
 }
 

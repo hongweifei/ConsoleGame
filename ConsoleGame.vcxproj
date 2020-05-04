@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Graphics\paint.c" />
+    <ClCompile Include="Graphics\print.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="queue.c" />
     <ClCompile Include="Widget\button.c" />

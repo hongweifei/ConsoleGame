@@ -1,4 +1,4 @@
-
+﻿
 #include "print.h"
 
 
@@ -12,7 +12,7 @@ void PrintSleep(unsigned long ms)
 #ifndef _WIN32
 	//unsigned long s = ms / 1000;//秒数
 	sleep(ms / 1000);
-	#endif
+#endif
 }
 
 void PrintClear()
@@ -84,7 +84,7 @@ void PrintMoveUp(short y)
 }
 
 /*光標下移*/
-inline void PrintMoveDown(short y)
+void PrintMoveDown(short y)
 {
 #ifdef _WIN32
 	cursor_y += y;
@@ -155,10 +155,14 @@ void PrintHaveColor(const char *text, PrintForeGroundColor fore_ground_color, Pr
 
 /*输出带有前景色的文本*/
 void PrintHaveForeGroundColor(const char *text, PrintForeGroundColor fore_ground_color)
- { PrintHaveColor(text, fore_ground_color, 0); }
+{
+	PrintHaveColor(text, fore_ground_color, 0);
+}
 
 /*输出带有背景颜色的文本*/
 void PrintHaveBackGroundColor(const char *text, PrintBackGroundColor back_ground_color) 
-{ PrintHaveColor(text, 0, back_ground_color); }
+{
+	PrintHaveColor(text, 0, back_ground_color);
+}
 
 

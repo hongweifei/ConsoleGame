@@ -37,16 +37,16 @@ typedef enum _keyboard
 	KEY_ENTER = 13,
 	#endif
 
+
 	#ifdef __linux
 	KEY_UP = 65,
 	KEY_DOWN = 66,
 	KEY_LEFT = 68,
 	KEY_RIGHT = 67,
 
-	KEY_ENTER = 10,
+	//KEY_ENTER = 10,
 	#endif
 
-	
 
 	KEY_A = 'a',
 	KEY_B,

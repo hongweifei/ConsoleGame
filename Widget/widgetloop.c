@@ -44,19 +44,26 @@ void WidgetLoop()
 	int j = 0;
 	int key = 0;
 
+
+	#ifdef _WIN32
+	CONSOLE_CURSOR_INFO cursor_info = { 1,FALSE };
+	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE),&cursor_info);
+	#endif // _WIN32
+
+
 	#ifdef __linux
 	printf("\033[?25l");
 	#endif
 
 	while (1)
 	{
-		PrintClear();
-
 		#ifdef _WIN32
 		if (KBHIT)
 		#endif
 
 		#ifdef __linux
+		PrintClear();
+
 		if((key = GETCH))
 		#endif
 		{
@@ -136,6 +143,7 @@ void WidgetLoop()
 		for (i = 0; i < widget_count; i++)
 			widgets[i]->render(widgets[i], widgets[i]->paint);
 
+		
 	#ifdef _WIN32
 		static unsigned long ms = 1000 / 30;
 		Sleep(ms);
@@ -145,6 +153,7 @@ void WidgetLoop()
 		static unsigned long s = 1000 / 30 / 1000;//秒数
 		sleep(s);
 	#endif
+		
 	}
 
 	for (i = 0; i < widget_count; i++)

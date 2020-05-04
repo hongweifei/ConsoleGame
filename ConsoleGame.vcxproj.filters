@@ -51,6 +51,9 @@
     <ClCompile Include="Widget\textfield.c">
       <Filter>源文件\Widget</Filter>
     </ClCompile>
+    <ClCompile Include="Graphics\print.c">
+      <Filter>源文件\Graphics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graphics\print.h">
