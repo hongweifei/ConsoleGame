@@ -1,7 +1,11 @@
 ﻿
 
+#include <stdlib.h>
+#include <string.h>
+
 #include "textfield.h"
 #include "../Graphics/print.h"
+
 
 void TextFieldRender(Widget *widget, Paint *paint)
 {

@@ -1,6 +1,8 @@
 ﻿
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "Graphics/print.h"
 
 #include "Widget/button.h"
@@ -17,16 +19,16 @@ void StartGame(Widget *widget)
 
 	PrintClear();
 	
-	Label *label = LabelInit("请输入你的角色名字：", 40 - strlen("请输入你的角色名字：") / 2, 5);
+	Label *label = LabelInit("请输入你的角色名字：", 39 - strlen("请输入你的角色名字：") / 2, 2);
 	AddWidgetToMainLoop((Widget*)label);
 	
-	TextField *field = TextFieldInit(30,15);
+	TextField *field = TextFieldInit(30,5);
 	AddWidgetToMainLoop((Widget*)field);
 
-	Button *button1 = ButtonInit("确定", 40 - strlen("确定") / 2, 20);
+	Button *button1 = ButtonInit("确定", 39 - strlen("确定") / 2, 10);
 	AddWidgetToMainLoop((Widget*)button1);
 
-	Button* button2 = ButtonInit("取消", 40 - strlen("取消") / 2, 25);
+	Button* button2 = ButtonInit("取消", 39 - strlen("取消") / 2, 12);
 	AddWidgetToMainLoop((Widget*)button2);
 }
 
@@ -42,8 +44,8 @@ int main()
 {
 	int quit = 0;
 
-	Button *button_start = ButtonInit("StartGame",40 - strlen("StartGame") / 2,5);
-	Button *button_exit = ButtonInit("ExitGame", 40 - strlen("ExitGame") / 2, 10);
+	Button *button_start = ButtonInit("StartGame",39 - strlen("StartGame") / 2,10);
+	Button *button_exit = ButtonInit("ExitGame", 39 - strlen("ExitGame") / 2, 12);
 	//ButtonSetFontColor(button, PrintForeGroundColorRed);
 
 	button_start->enter = StartGame;
@@ -53,6 +55,8 @@ int main()
 	AddWidgetToMainLoop((Widget*)button_exit);
 
 	WidgetMainLoop();
+
+	//PrintPosition("hello",10,10);
 
 	return 0;
 }

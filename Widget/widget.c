@@ -1,5 +1,6 @@
 ﻿
 
+#include <stdlib.h>
 #include "widget.h"
 
 #ifdef _WIN32

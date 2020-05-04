@@ -1,5 +1,6 @@
 ﻿
 
+#include <stdlib.h>
 #include "paint.h"
 
 Paint *PaintInit()

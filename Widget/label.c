@@ -1,5 +1,8 @@
 ﻿
 
+
+#include <stdlib.h>
+#include <string.h>
 #include "label.h"
 
 void LabelRender(Widget *widget, Paint *paint)

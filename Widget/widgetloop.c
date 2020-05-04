@@ -1,5 +1,7 @@
 ﻿
 
+#include <stdlib.h>
+
 #include "widgetloop.h"
 
 #include "widget.h"
@@ -42,11 +44,27 @@ void WidgetLoop()
 	int j = 0;
 	int key = 0;
 
+	#ifdef __linux
+	printf("\033[?25l");
+	#endif
+
 	while (1)
 	{
+		PrintClear();
+
+		#ifdef _WIN32
 		if (KBHIT)
+		#endif
+
+		#ifdef __linux
+		if((key = GETCH))
+		#endif
 		{
+			#ifdef _WIN32
 			int key = GETCH;
+			#endif
+
+			//printf("%d\n",key);
 			
 			short focus_count = 0;
 
@@ -87,7 +105,7 @@ void WidgetLoop()
 				{
 					Button *button = (Button*)widgets[i];
 					if (button->enter != NULL)
-						button->enter(button);
+						button->enter((Widget*)button);
 				}
 
 				if (widgets[i]->type == TYPE_TEXT_FIELD && widgets[i]->focus && (key >= ' ' && key <= '~'))
@@ -137,12 +155,15 @@ void WidgetLoop()
 void WidgetMainLoop()
 {
 #ifdef _WIN32
+	//#include <windows.h>
 	//_beginthread(WidgetLoop,0,NULL);
 	WidgetLoop();
 #endif // _WIN32
 
 #ifndef _WIN32
-	pthread_t thread;
-	int result = pthread_create(&thread, NULL, WidgetLoop, NULL);
+	//#include <pthread.h>
+	//pthread_t thread;
+	//int result = pthread_create(&thread, NULL, WidgetLoop, NULL);
+	WidgetLoop();
 #endif // !_WIN32
 }

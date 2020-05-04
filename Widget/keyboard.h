@@ -3,27 +3,50 @@
 #pragma once
 
 
-#include <conio.h> 
 
 #ifdef _WIN32
+#include <conio.h> 
 #define KBHIT _kbhit()
 #define GETCH _getch()
 #endif // _WIN32
 
-#ifndef _WIN32
-#define KBHIT kbhit()
-#define GETCH getch()
+#ifdef __linux
+
+int Getch()
+{
+	int ch;
+	system("stty -icanon");
+	ch = getchar();
+	system("stty icanon");
+	return ch;
+}
+
+//#define KBHIT kbhit()
+#define GETCH Getch()
 #endif // !_WIN32
 
 
 typedef enum _keyboard
 {
+	#ifdef _WIN32
 	KEY_UP = 72,
 	KEY_DOWN = 80,
 	KEY_LEFT = 75,
 	KEY_RIGHT = 77,
-
+	
 	KEY_ENTER = 13,
+	#endif
+
+	#ifdef __linux
+	KEY_UP = 65,
+	KEY_DOWN = 66,
+	KEY_LEFT = 68,
+	KEY_RIGHT = 67,
+
+	KEY_ENTER = 10,
+	#endif
+
+	
 
 	KEY_A = 'a',
 	KEY_B,
