@@ -9,14 +9,20 @@
 
 #define TYPE_BUTTON "button"
 
+#define BUTTON_STYLE_DEFAULT 0
+static Paint paint_style_default = { PrintForeGroundColorBlack,PrintBackGroundColorWhite };
+
 typedef struct
 {
 	Label label;
+
+	short style;
+
 	WidgetFunction enter;
 }Button;
 
 
-//void ButtonRender(Widget *widget, Paint *paint);
+void ButtonRender(Widget *widget, Paint *paint);
 Button *ButtonInit(char* text, short x, short y);
 
 void ButtonSetFontColor(Button *button,PrintForeGroundColor color);

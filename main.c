@@ -20,7 +20,7 @@ void StartGame(Widget *widget)
 	Label *label = LabelInit("请输入你的角色名字：", 40 - strlen("请输入你的角色名字：") / 2, 5);
 	AddWidgetToMainLoop((Widget*)label);
 	
-	TextField *field = TextFieldInit(20,15);
+	TextField *field = TextFieldInit(30,15);
 	AddWidgetToMainLoop((Widget*)field);
 
 	Button *button1 = ButtonInit("确定", 40 - strlen("确定") / 2, 20);

@@ -163,7 +163,9 @@ extern "C" {
 	#ifdef _WIN32
 		cursor_x = x;
 		cursor_y = y;
-		COORD coord = { cursor_x,cursor_y };
+		static COORD coord = { 0,0 };
+		coord.X = x;
+		coord.Y = y;
 		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 	#endif // _WIN32
 
@@ -232,10 +234,7 @@ extern "C" {
 	inline void PrintPosition(const char *text, short x, short y)
 	{
 	#ifdef _WIN32
-		cursor_x = x;
-		cursor_y = y;
-		COORD coord = { cursor_x,cursor_y };
-		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+		PrintMoveTo(x, y);
 		printf(text);
 	#endif // _WIN32
 

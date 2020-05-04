@@ -93,12 +93,12 @@ void WidgetLoop()
 				if (widgets[i]->type == TYPE_TEXT_FIELD && widgets[i]->focus && (key >= ' ' && key <= '~'))
 				{
 					TextField *field = (TextField*)widgets[i];
-					LabelAddChar(&field->label,key);
+					TextFieldAddChar(field,key);
 				}
 				else if (widgets[i]->type == TYPE_TEXT_FIELD && widgets[i]->focus && key == 8)
 				{
 					TextField* field = (TextField*)widgets[i];
-					LabelRemoveLastChar(&field->label);
+					TextFieldRemoveLastChar(field);
 				}
 			}
 
@@ -116,23 +116,7 @@ void WidgetLoop()
 		}
 
 		for (i = 0; i < widget_count; i++)
-		{
-			static Paint paint_cache;
-			paint_cache.foreground_color = widgets[i]->paint->foreground_color;
-			paint_cache.background_color = widgets[i]->paint->background_color;
-
-			if (widgets[i]->type == TYPE_BUTTON)
-			{
-				Button* button = (Button*)widgets[i];
-				if (button->label.widget.focus)
-				{
-					paint_cache.foreground_color = PrintForeGroundColorBlack;
-					paint_cache.background_color = PrintBackGroundColorWhite;
-				}
-			}
-			
-			widgets[i]->render(widgets[i], &paint_cache);
-		}
+			widgets[i]->render(widgets[i], widgets[i]->paint);
 
 	#ifdef _WIN32
 		static unsigned long ms = 1000 / 30;
